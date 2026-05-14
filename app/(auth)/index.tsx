@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 export default function LoginScreen(){
     return (
         <View style={styles.container}>
@@ -10,9 +10,15 @@ export default function LoginScreen(){
                         <Text style={styles.txtEmail}>E-mail</Text>
                         <TextInput style={styles.inputEmail}/>
                     </View>
-                     <View style={styles.boxSenha}>
+                    <View style={styles.boxSenha}>
                         <Text style={styles.txtSenha}>Senha</Text>
-                        <TextInput style={styles.inputSenha}/>
+                        <TextInput secureTextEntry style={styles.inputSenha}/>
+                    </View>
+                    <View style={styles.boxBtn}>
+                        <TouchableOpacity style={styles.btn}>
+                            <Text style={styles.txtBtn}>Entrar</Text>
+                        </TouchableOpacity>
+                        <Text>Não possui uma conta? Cadastre-se</Text>
                     </View>
             </View>
         </View>
@@ -51,7 +57,8 @@ const styles = StyleSheet.create({
     txtEmail: {
         fontSize: 16,
         color: '#250C77',
-        fontWeight: 500
+        fontWeight: 500,
+        paddingBottom: 6
     },
     inputEmail:{
         width: 326,
@@ -59,17 +66,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#e6e6e6',
         borderRadius: 4,
         borderWidth: 1,
-        borderColor: '#CACACA'
+        borderColor: '#CACACA',
+        padding: 8
     },
     boxSenha:{
         width: '100%',
         paddingHorizontal: 34,
-        paddingVertical: 60
+        marginTop: -23
     },
     txtSenha: {
         fontSize: 16,
         color: '#250C77',
-        fontWeight: 500
+        fontWeight: 500,
+        paddingBottom: 6
     },
     inputSenha:{
         width: 326,
@@ -77,6 +86,25 @@ const styles = StyleSheet.create({
         backgroundColor: '#e6e6e6',
         borderRadius: 4,
         borderWidth: 1,
-        borderColor: '#CACACA'
+        borderColor: '#CACACA',
+        padding: 8
+    }, 
+    boxBtn:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        paddingTop: 23,
+    },
+    btn: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 326,
+        height: 57,
+        backgroundColor: '#184177',  
+    },
+    txtBtn:{
+        fontSize: 22,
+        color: '#fff',
+        fontWeight: 'bold'
     }
 });
