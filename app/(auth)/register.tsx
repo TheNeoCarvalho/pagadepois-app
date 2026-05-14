@@ -1,7 +1,17 @@
 import { Link } from 'expo-router';
+import { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function RegisterScreen(){
+
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+
+    const submit = () => {
+        fetch('http://localhost:8000/api/auth/register');
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.txtLogin}>Cadastro</Text>
@@ -10,15 +20,15 @@ export default function RegisterScreen(){
             <View style={styles.box}>
                     <View style={styles.boxNome}>
                         <Text style={styles.txtNome}>Nome</Text>
-                        <TextInput style={styles.inputNome}/>
+                        <TextInput value={nome} onChangeText={(text) => setNome(text) } style={styles.inputNome}/>
                     </View>
                     <View style={styles.boxEmail}>
                         <Text style={styles.txtEmail}>E-mail</Text>
-                        <TextInput style={styles.inputEmail}/>
+                        <TextInput value={email} onChangeText={(text) => setEmail(text) } style={styles.inputEmail}/>
                     </View>
                     <View style={styles.boxSenha}>
                         <Text style={styles.txtSenha}>Senha</Text>
-                        <TextInput secureTextEntry style={styles.inputSenha}/>
+                        <TextInput value={senha} onChangeText={(text) => setSenha(text) } secureTextEntry style={styles.inputSenha}/>
                     </View>
                     <View style={styles.boxBtn}>
                         <TouchableOpacity style={styles.btn}>
