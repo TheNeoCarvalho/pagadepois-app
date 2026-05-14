@@ -1,4 +1,6 @@
+import { Link } from 'expo-router';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+
 export default function LoginScreen(){
     return (
         <View style={styles.container}>
@@ -18,7 +20,9 @@ export default function LoginScreen(){
                         <TouchableOpacity style={styles.btn}>
                             <Text style={styles.txtBtn}>Entrar</Text>
                         </TouchableOpacity>
-                        <Text>Não possui uma conta? Cadastre-se</Text>
+                        <Text style={styles.txtCadastro}>Não possui uma conta? 
+                            <Link style={styles.txtLink} href="/register">Cadastre-se</Link>
+                        </Text>
                     </View>
             </View>
         </View>
@@ -106,5 +110,14 @@ const styles = StyleSheet.create({
         fontSize: 22,
         color: '#fff',
         fontWeight: 'bold'
+    },
+    txtCadastro:{
+        color: '#250C77',
+        fontSize: 16,
+        fontWeight: 500,
+        paddingTop: 32
+    },
+    txtLink: {
+        textDecorationLine: 'underline'
     }
 });
