@@ -6,11 +6,14 @@ export default function LoginScreen(){
             <Text style={styles.txtWelcome}>Bem vindo(a) ao Paguedepois </Text>
 
             <View style={styles.box}>
-                    <View>
-                        <Text>Email</Text>
-                        <TextInput />
+                    <View style={styles.boxEmail}>
+                        <Text style={styles.txtEmail}>E-mail</Text>
+                        <TextInput style={styles.inputEmail}/>
                     </View>
-
+                     <View style={styles.boxSenha}>
+                        <Text style={styles.txtSenha}>Senha</Text>
+                        <TextInput style={styles.inputSenha}/>
+                    </View>
             </View>
         </View>
     )
@@ -39,5 +42,41 @@ const styles = StyleSheet.create({
         height: 632,
         borderTopRightRadius: 24,
         marginTop: 55
+    },
+    boxEmail:{
+        width: '100%',
+        paddingHorizontal: 34,
+        paddingVertical: 60
+    },
+    txtEmail: {
+        fontSize: 16,
+        color: '#250C77',
+        fontWeight: 500
+    },
+    inputEmail:{
+        width: 326,
+        height: 40,
+        backgroundColor: '#e6e6e6',
+        borderRadius: 4,
+        borderWidth: 1,
+        borderColor: '#CACACA'
+    },
+    boxSenha:{
+        width: '100%',
+        paddingHorizontal: 34,
+        paddingVertical: 60
+    },
+    txtSenha: {
+        fontSize: 16,
+        color: '#250C77',
+        fontWeight: 500
+    },
+    inputSenha:{
+        width: 326,
+        height: 40,
+        backgroundColor: '#e6e6e6',
+        borderRadius: 4,
+        borderWidth: 1,
+        borderColor: '#CACACA'
     }
 });
